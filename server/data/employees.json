@@ -1,0 +1,25 @@
+[
+  { "id": "cbd-01", "category": "CBD", "name": "Maria Santos", "position": "Project Development Officer", "photo": "https://randomuser.me/api/portraits/women/44.jpg" },
+  { "id": "cbd-02", "category": "CBD", "name": "Juan Dela Cruz", "position": "Senior Program Analyst", "photo": "https://randomuser.me/api/portraits/men/32.jpg" },
+  { "id": "cbd-03", "category": "CBD", "name": "Angela Reyes", "position": "Training Specialist", "photo": "https://randomuser.me/api/portraits/women/65.jpg" },
+  { "id": "cbd-04", "category": "CBD", "name": "Paolo Mendoza", "position": "Community Organizer", "photo": "https://randomuser.me/api/portraits/men/75.jpg" },
+  { "id": "cbd-05", "category": "CBD", "name": "Carla Villanueva", "position": "Administrative Officer", "photo": "https://randomuser.me/api/portraits/women/21.jpg" },
+
+  { "id": "kmd-01", "category": "KMD", "name": "Rafael Aquino", "position": "Information Systems Analyst", "photo": "https://randomuser.me/api/portraits/men/46.jpg" },
+  { "id": "kmd-02", "category": "KMD", "name": "Beatriz Navarro", "position": "Knowledge Management Officer", "photo": "https://randomuser.me/api/portraits/women/12.jpg" },
+  { "id": "kmd-03", "category": "KMD", "name": "Miguel Torres", "position": "Communications Specialist", "photo": "https://randomuser.me/api/portraits/men/18.jpg" },
+  { "id": "kmd-04", "category": "KMD", "name": "Lea Domingo", "position": "Research Associate", "photo": "https://randomuser.me/api/portraits/women/33.jpg" },
+  { "id": "kmd-05", "category": "KMD", "name": "Nico Bautista", "position": "Web Content Editor", "photo": "https://randomuser.me/api/portraits/men/59.jpg" },
+
+  { "id": "acad-01", "category": "ACAD", "name": "Isabel Garcia", "position": "Curriculum Developer", "photo": "https://randomuser.me/api/portraits/women/50.jpg" },
+  { "id": "acad-02", "category": "ACAD", "name": "Daniel Ramos", "position": "Learning Facilitator", "photo": "https://randomuser.me/api/portraits/men/22.jpg" },
+  { "id": "acad-03", "category": "ACAD", "name": "Patricia Lim", "position": "Academy Coordinator", "photo": "https://randomuser.me/api/portraits/women/79.jpg" },
+  { "id": "acad-04", "category": "ACAD", "name": "Gabriel Castillo", "position": "Program Evaluator", "photo": "https://randomuser.me/api/portraits/men/64.jpg" },
+  { "id": "acad-05", "category": "ACAD", "name": "Trisha Flores", "position": "Registrar Staff", "photo": "https://randomuser.me/api/portraits/women/28.jpg" },
+
+  { "id": "obd-01", "category": "OBD", "name": "Ramon Pascual", "position": "Operations Supervisor", "photo": "https://randomuser.me/api/portraits/men/41.jpg" },
+  { "id": "obd-02", "category": "OBD", "name": "Katrina Soriano", "position": "Logistics Officer", "photo": "https://randomuser.me/api/portraits/women/90.jpg" },
+  { "id": "obd-03", "category": "OBD", "name": "Eduardo Cruz", "position": "Field Operations Lead", "photo": "https://randomuser.me/api/portraits/men/85.jpg" },
+  { "id": "obd-04", "category": "OBD", "name": "Hannah Aguilar", "position": "Process Improvement Analyst", "photo": "https://randomuser.me/api/portraits/women/8.jpg" },
+  { "id": "obd-05", "category": "OBD", "name": "Vincent Tan", "position": "Service Desk Officer", "photo": "https://randomuser.me/api/portraits/men/10.jpg" }
+]
