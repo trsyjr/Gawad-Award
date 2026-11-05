@@ -49,7 +49,7 @@ export default function App() {
       try {
         const cfg = await getConfig();
         if (cancelled) return;
-        document.title = `${cfg.eventTitle} Voting`;
+        // document.title = `${cfg.eventTitle} Voting`;
         setConfig(cfg);
 
         // If the visitor refreshes mid-vote, pick up where they were.
