@@ -50,7 +50,11 @@ export default function Awards({ awards, votes, onPick }) {
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                   className="flex h-full flex-col items-center text-center p-6"
                 >
-                  <AwardEmblem awardId={award.id} className="h-32 w-32" iconClass="h-14 w-14" />
+                  <AwardEmblem
+                    awardId={award.id}
+                    className="h-48 w-48 sm:h-56 sm:w-56"
+                    iconClass="h-20 w-20 sm:h-24 sm:w-24"
+                  />
 
                   <h2 className="mt-8 font-display text-3xl font-bold leading-tight text-gold-light">{award.title}</h2>
                   <p className="mt-3 text-xl leading-relaxed text-ivory/70">{award.description}</p>

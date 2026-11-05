@@ -11,7 +11,9 @@ import { getConfig, startSession } from './api.js';
 
 const EMAIL_KEY = 'awards.email';
 
-// sessionStorage can throw (private mode, blocked storage); the app works without it.
+// Change this filename to match your audio file inside client/public/awards/
+const MUSIC_PATH = '/awards/AwardingBM.mp3';
+
 const remember = (email) => {
   try {
     if (email) sessionStorage.setItem(EMAIL_KEY, email);
@@ -36,9 +38,41 @@ export default function App() {
 
   const [email, setEmail] = useState('');
   const [votes, setVotes] = useState({});
-  const [view, setView] = useState('landing'); // landing | awards | categories | employees
+  const [view, setView] = useState('landing');
   const [award, setAward] = useState(null);
   const [category, setCategory] = useState(null);
+
+  // --- BACKGROUND MUSIC LOGIC ---
+  useEffect(() => {
+    const audio = new Audio(MUSIC_PATH);
+    audio.loop = true;
+    audio.volume = 0.4; // Set volume level (0.0 to 1.0)
+
+    const startPlayback = () => {
+      audio.play().catch(() => {
+        // Autoplay policy prevented playback; wait for user interaction
+      });
+    };
+
+    startPlayback();
+
+    // Fallback: Start playing on first user interaction if browser blocked autoplay
+    const handleUserInteraction = () => {
+      audio.play().catch(() => {});
+      window.removeEventListener('click', handleUserInteraction);
+      window.removeEventListener('keydown', handleUserInteraction);
+    };
+
+    window.addEventListener('click', handleUserInteraction);
+    window.addEventListener('keydown', handleUserInteraction);
+
+    return () => {
+      audio.pause();
+      window.removeEventListener('click', handleUserInteraction);
+      window.removeEventListener('keydown', handleUserInteraction);
+    };
+  }, []);
+  // ------------------------------
 
   useEffect(() => {
     let cancelled = false;
@@ -49,10 +83,8 @@ export default function App() {
       try {
         const cfg = await getConfig();
         if (cancelled) return;
-        // document.title = `${cfg.eventTitle} Voting`;
         setConfig(cfg);
 
-        // If the visitor refreshes mid-vote, pick up where they were.
         const saved = recall();
         if (saved) {
           try {
@@ -78,7 +110,7 @@ export default function App() {
   }, [attempt]);
 
   async function signIn(rawEmail) {
-    const session = await startSession(rawEmail); // throws with a readable message on invalid input
+    const session = await startSession(rawEmail);
     remember(session.email);
     setEmail(session.email);
     setVotes(session.votes);
