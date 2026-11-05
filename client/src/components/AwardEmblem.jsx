@@ -2,7 +2,7 @@ import Logo from './Logo.jsx';
 import { themeFor } from '../theme.js';
 
 /** The logo for one award. Falls back to a gold badge with the award's icon. */
-export default function AwardEmblem({ awardId, className = 'h-20 w-20', iconClass = 'h-9 w-9' }) {
+export default function AwardEmblem({ awardId, className = 'h-32 w-32', iconClass = 'h-14 w-14' }) {
   const theme = themeFor(awardId);
   const Icon = theme.icon;
 
