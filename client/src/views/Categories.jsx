@@ -6,6 +6,11 @@ import AwardEmblem from '../components/AwardEmblem.jsx';
 import { GOLD_SHADOW } from '../theme.js';
 
 export default function Categories({ award, categories, onPick, onBack }) {
+  // Only show CBD (or categories that have nominees)
+  const activeCategories = categories.filter(
+    (category) => category.id.toUpperCase() === 'CBD' || category.count > 0
+  );
+
   return (
     <Page>
       <BackButton onClick={onBack}>All awards</BackButton>
@@ -16,13 +21,14 @@ export default function Categories({ award, categories, onPick, onBack }) {
         <p className="mt-3 text-lg text-ivory/70">Voting for {award.title}</p>
       </div>
 
-      <div className="mx-auto grid max-w-4xl gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
-        {categories.map((category, i) => (
+      <div className="mx-auto flex justify-center max-w-4xl gap-8">
+        {activeCategories.map((category, i) => (
           <motion.div
             key={category.id}
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * i, type: 'spring', stiffness: 90, damping: 16 }}
+            className="w-full max-w-xs"
           >
             <Floaty amplitude={10} duration={5 + i * 0.6} delay={i * 0.5} shadow={GOLD_SHADOW}>
               <motion.button
