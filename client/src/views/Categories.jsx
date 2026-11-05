@@ -16,7 +16,11 @@ export default function Categories({ award, categories, onPick, onBack }) {
       <BackButton onClick={onBack}>All awards</BackButton>
 
       <div className="mb-14 flex flex-col items-center text-center">
-        <AwardEmblem awardId={award.id} className="h-24 w-24" iconClass="h-11 w-11" />
+        <AwardEmblem
+          awardId={award.id}
+          className="h-48 w-48 sm:h-56 sm:w-56"
+          iconClass="h-20 w-20 sm:h-24 sm:w-24"
+        />
         <h1 className="gold-text mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl">Pick a category</h1>
         <p className="mt-3 text-lg text-ivory/70">Voting for {award.title}</p>
       </div>
