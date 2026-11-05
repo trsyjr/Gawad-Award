@@ -7,6 +7,9 @@ import { ShieldCheckIcon, UsersIcon, LightbulbIcon, TrendingUpIcon, TrophyIcon }
  * If the file is missing, a gold trophy badge is shown instead.
  */
 export const LOGO_SRC = '/awards/MRALogo.png';
+export const TPA_LOGO = '/awards/TPALogo.png';
+export const KSA_LOGO = '/awards/KSALogo.png';
+export const MIA_LOGO = '/awards/MIALogo.png';
 export const LANDING_LOGO = '/image/IconLogo.png';
 
 /** Soft gold glow that sits under every floating card. */
@@ -19,9 +22,9 @@ export const GOLD_SHADOW = 'rgba(212, 175, 55, 0.5)';
  */
 export const awardTheme = {
   'most-reliable': { icon: ShieldCheckIcon, logo: LOGO_SRC },
-  'team-player': { icon: UsersIcon, logo: LOGO_SRC },
-  'knowledge-sharer': { icon: LightbulbIcon, logo: LOGO_SRC },
-  'most-improved': { icon: TrendingUpIcon, logo: LOGO_SRC },
+  'team-player': { icon: UsersIcon, logo: TPA_LOGO },
+  'knowledge-sharer': { icon: LightbulbIcon, logo: KSA_LOGO },
+  'most-improved': { icon: TrendingUpIcon, logo: MIA_LOGO },
 };
 
-export const themeFor = (awardId) => awardTheme[awardId] || { icon: TrophyIcon, logo: LOGO_SRC };
+export const themeFor = (awardId) => awardTheme[awardId] || { icon: TrophyIcon, logo: LANDING_LOGO };
