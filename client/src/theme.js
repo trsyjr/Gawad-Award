@@ -6,7 +6,7 @@ import { ShieldCheckIcon, UsersIcon, LightbulbIcon, TrendingUpIcon, TrophyIcon }
  * background, or SVG, works best). It is used in the header, on the landing page and on every award.
  * If the file is missing, a gold trophy badge is shown instead.
  */
-export const LOGO_SRC = '/logo.png';
+export const LOGO_SRC = '/MRALogo.png';
 
 /** Soft gold glow that sits under every floating card. */
 export const GOLD_SHADOW = 'rgba(212, 175, 55, 0.5)';
