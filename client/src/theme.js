@@ -7,6 +7,7 @@ import { ShieldCheckIcon, UsersIcon, LightbulbIcon, TrendingUpIcon, TrophyIcon }
  * If the file is missing, a gold trophy badge is shown instead.
  */
 export const LOGO_SRC = '/awards/MRALogo.png';
+export const LANDING_LOGO = '/image/IconLogo.png';
 
 /** Soft gold glow that sits under every floating card. */
 export const GOLD_SHADOW = 'rgba(212, 175, 55, 0.5)';

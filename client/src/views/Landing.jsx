@@ -3,7 +3,7 @@ import Page from '../components/Page.jsx';
 import Floaty from '../components/Floaty.jsx';
 import Logo from '../components/Logo.jsx';
 import { MailIcon, SpinnerIcon, TrophyIcon } from '../icons.jsx';
-import { GOLD_SHADOW, LOGO_SRC } from '../theme.js';
+import { GOLD_SHADOW, LANDING_LOGO, LOGO_SRC } from '../theme.js';
 
 export default function Landing({ title, onSubmit }) {
   const [email, setEmail] = useState('');
@@ -26,10 +26,10 @@ export default function Landing({ title, onSubmit }) {
   return (
     <Page className="flex min-h-[calc(100vh-9rem)] flex-col items-center justify-center text-center">
       {/* The logo floats above its own gold glow */}
-      <div className="mb-8 h-40 w-40 sm:h-48 sm:w-48">
+      <div className="h-64 w-64 sm:h-80 sm:w-80">
         <Floaty amplitude={14} duration={6} shadow={GOLD_SHADOW}>
           <Logo
-            src={LOGO_SRC}
+            src={LANDING_LOGO}
             alt={title}
             className="h-full w-full drop-shadow-[0_0_34px_rgba(212,175,55,0.5)]"
             fallback={
