@@ -23,10 +23,13 @@ export const AWARDS = [
   },
 ];
 
-// Updated CATEGORIES array containing award IDs so the backend query validation permits them
 export const CATEGORIES = [
   'most-reliable',
   'team-player',
   'knowledge-sharer',
   'most-improved',
+  'CBD',
+  'KMD',
+  'ACAD',
+  'OBD',
 ];

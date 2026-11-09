@@ -73,17 +73,57 @@ export function createService({ eventTitle, awards, categories, employees, sheet
       return {
         eventTitle,
         awards,
-        categories: categories.map((id) => ({ id, count: employees.filter((e) => e.category === id).length })),
+        categories: categories.map((id) => ({
+          id,
+          count: employees.filter((e) => e.category === id || e.award === id).length,
+        })),
       };
     },
 
     employeesIn(category) {
-      const id = String(category || '').toUpperCase();
-      if (!categories.includes(id)) throw new ApiError(400, 'invalid_category', 'Unknown category.');
+      // 1. Return all employees if no category parameter is provided
+      if (!category) {
+        return {
+          employees: employees.map(({ id: eid, category: cat, award: awd, name, position, photo }) => ({
+            id: eid,
+            category: cat,
+            award: awd,
+            name,
+            position,
+            photo,
+          })),
+        };
+      }
+
+      const query = String(category).trim();
+      const upperQuery = query.toUpperCase();
+
+      // 2. Validate against awards or categories
+      const validAwardIds = awards.map((a) => a.id);
+      const isValid =
+        categories.includes(query) ||
+        categories.includes(upperQuery) ||
+        validAwardIds.includes(query);
+
+      if (!isValid) throw new ApiError(400, 'invalid_category', 'Unknown category.');
+
+      // 3. Match against emp.award or emp.category (checking exact match and uppercase)
+      const list = employees.filter(
+        (e) =>
+          e.award === query ||
+          e.category === query ||
+          e.category === upperQuery
+      );
+
       return {
-        employees: employees
-          .filter((e) => e.category === id)
-          .map(({ id: eid, category: cat, name, position, photo }) => ({ id: eid, category: cat, name, position, photo })),
+        employees: list.map(({ id: eid, category: cat, award: awd, name, position, photo }) => ({
+          id: eid,
+          category: cat,
+          award: awd,
+          name,
+          position,
+          photo,
+        })),
       };
     },
 

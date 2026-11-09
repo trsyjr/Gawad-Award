@@ -26,8 +26,9 @@ async function request(path, options = {}) {
 
 export const getConfig = () => request('/config');
 
-// Fetch all employees without passing query parameters to prevent server 400 validation errors
-export const getEmployees = () => request('/employees');
+// Clean parameter passing for employees endpoint
+export const getEmployees = (category) =>
+  request(category ? `/employees?category=${encodeURIComponent(category)}` : '/employees');
 
 export const startSession = (email) => request('/session', { method: 'POST', body: JSON.stringify({ email }) });
 export const castVote = (payload) => request('/vote', { method: 'POST', body: JSON.stringify(payload) });
