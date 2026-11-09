@@ -1,30 +1,44 @@
 [
   {
     "id": "cbd-01",
-    "award": "most-reliable",
-    "name": "Althea Muriel L. Pineda",
+    "award": "best-technical",
+    "name": "Klenarchi Mae E. Flores",
     "position": "Training Specialist III",
-    "photo": "/cbd/THEA.JPG"
+    "photo": "/cbd/KLENG.JPG"
   },
   {
     "id": "cbd-02",
-    "award": "team-player",
-    "name": "TEST1",
-    "position": "Training Specialist III",
+    "award": "best-technical",
+    "name": "Gelves C. Almiñe",
+    "position": "Project Development Officer III",
     "photo": "/cbd/THEA.JPG"
   },
   {
     "id": "cbd-03",
-    "award": "knowledge-sharer",
-    "name": "TEST2",
-    "position": "Training Specialist III",
+    "award": "best-technical",
+    "name": "Analiza S. Ileto",
+    "position": "Project Development Officer III",
     "photo": "/cbd/THEA.JPG"
   },
   {
     "id": "cbd-04",
-    "award": "most-improved",
-    "name": "TEST3",
-    "position": "Training Specialist III",
+    "award": "best-technical",
+    "name": "Rutsen R. Natulla",
+    "position": "Admin Officer IV",
+    "photo": "/cbd/THEA.JPG"
+  },
+  {
+    "id": "cbd-05",
+    "award": "best-administrative",
+    "name": "Virginia W. Setias",
+    "position": "Admin Officer V",
+    "photo": "/cbd/THEA.JPG"
+  },
+  {
+    "id": "cbd-05",
+    "award": "best-administrative",
+    "name": "Loisse Nadine Q. Madrid",
+    "position": "Aministrative Assistant III",
     "photo": "/cbd/THEA.JPG"
   }
 ]
