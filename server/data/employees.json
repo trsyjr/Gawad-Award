@@ -1,26 +1,32 @@
 [
-  { "id": "cbd-01", "category": "CBD", "name": "Althea Muriel L. Pineda", "position": "Training Specialist III", "photo": "/cbd/THEA.JPG" },
-  { "id": "cbd-02", "category": "CBD", "name": "Carmina A. Llanto", "position": "Training Specialist IV", "photo": "/cbd/Carmina.JPG" },
-  { "id": "cbd-03", "category": "CBD", "name": "Jan Paolo M. Leyva", "position": "Project Development Officer IV", "photo": "/cbd/Pao.JPG" },
-  { "id": "cbd-04", "category": "CBD", "name": "Jesica S. Mencias", "position": "Training Specialist IV", "photo": "/cbd/Jesica.JPG" },
-  { "id": "cbd-05", "category": "CBD", "name": "Marry Ann Dealo", "position": "Training Specialist IV", "photo": "/cbd/Meann.JPG" },
-  { "id": "cbd-06", "category": "CBD", "name": "Louie Jane R. Francisco", "position": "Project Development Officer III", "photo": "/cbd/LJ.JPG" },
-  { "id": "cbd-07", "category": "CBD", "name": "Orchid S. Bibit", "position": "Training Specialist III", "photo": "/cbd/Orchid.JPG" },
-  { "id": "cbd-08", "category": "CBD", "name": "Eddniel Patrick I. Papa", "position": "Project Development Officer III", "photo": "/cbd/Edd.JPG" },
-  { "id": "cbd-09", "category": "CBD", "name": "Ma. Erica Ruby F. Fernandez", "position": "Training Specialist III", "photo": "/cbd/AKI.JPG" },
-  { "id": "cbd-10", "category": "CBD", "name": "Tonghie R. Sy Jr", "position": "Project Development Officer III", "photo": "/cbd/Ako.JPG" },
-  { "id": "cbd-11", "category": "CBD", "name": "Kent B. Gaspar", "position": "Training Specialist III", "photo": "/cbd/Kent.JPG" },
-  { "id": "cbd-12", "category": "CBD", "name": "Nancy E. Fortes", "position": "Training Specialist III", "photo": "/cbd/Nancy.JPG" },
-  { "id": "cbd-13", "category": "CBD", "name": "Jovie D. Cabais", "position": "Training Specialist III", "photo": "/cbd/Jovie.jpg" },
-  { "id": "cbd-14", "category": "CBD", "name": "Klenarchi Mae E. Flores", "position": "Training Specialist III", "photo": "/cbd/KLENG.JPG" },
-  { "id": "cbd-15", "category": "CBD", "name": "Maria Clarissa D. Raquinel", "position": "Training Specialist II", "photo": "/cbd/Cla.JPG" },
-  { "id": "cbd-16", "category": "CBD", "name": "Mery Joy A. Campaña", "position": "Training Specialist II", "photo": "/cbd/Joy.jpeg" },
-  { "id": "cbd-17", "category": "CBD", "name": "Jocelyn M. Edillo", "position": "Training Specialist III", "photo": "/cbd/Jo.JPG" },
-  { "id": "cbd-18", "category": "CBD", "name": "Jerick Joshua D. Bautista", "position": "Project Development Officer II", "photo": "/cbd/Jerick.jpeg" },
-  { "id": "cbd-19", "category": "CBD", "name": "Aljohn C. Purca", "position": "Social Worker Officer III", "photo": "/cbd/ALJOHN.JPG" },
-  { "id": "cbd-20", "category": "CBD", "name": "Christian Nicole D. Dorado", "position": "Social Worker Officer III", "photo": "/cbd/NIC.JPG" },
-  { "id": "cbd-21", "category": "CBD", "name": "Noreen N. Data", "position": "Social Worker Officer III", "photo": "/cbd/Noreen.JPG" },
-  { "id": "cbd-22", "category": "CBD", "name": "Jexequiel Rodriguez", "position": "Information System Analyst I", "photo": "/cbd/Jex.jpeg" },
-  { "id": "cbd-23", "category": "CBD", "name": "Jose Tiofisto M. Pacao", "position": "Administrative Assistant II", "photo": "/cbd/JOPS.JPG" },
-  { "id": "cbd-24", "category": "CBD", "name": "Justine Kelly E. Diaz", "position": "Admin Aide IV", "photo": "/cbd/Kelly.png" }
+ [
+  {
+    "id": "cbd-01",
+    "award": "most-reliable",
+    "name": "Althea Muriel L. Pineda",
+    "position": "Training Specialist III",
+    "photo": "/cbd/THEA.JPG"
+  },
+  {
+    "id": "cbd-02",
+    "award": "team-player",
+    "name": "TEST1",
+    "position": "Training Specialist III",
+    "photo": "/cbd/THEA.JPG"
+  },
+  {
+    "id": "cbd-03",
+    "award": "knowledge-sharer",
+    "name": "TEST2",
+    "position": "Training Specialist III",
+    "photo": "/cbd/THEA.JPG"
+  },
+  {
+    "id": "cbd-04",
+    "award": "most-improved",
+    "name": "TEST3",
+    "position": "Training Specialist III",
+    "photo": "/cbd/THEA.JPG"
+  }
+]
 ]

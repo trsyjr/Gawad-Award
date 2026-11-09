@@ -4,7 +4,8 @@ import Background from './components/Background.jsx';
 import Header from './components/Header.jsx';
 import Landing from './views/Landing.jsx';
 import Awards from './views/Awards.jsx';
-import Categories from './views/Categories.jsx';
+// COMMENTED OUT CATEGORIES IMPORT
+// import Categories from './views/Categories.jsx';
 import Employees from './views/Employees.jsx';
 import { SpinnerIcon } from './icons.jsx';
 import { getConfig, startSession } from './api.js';
@@ -171,11 +172,18 @@ export default function App() {
                   votes={votes}
                   onPick={(picked) => {
                     setAward(picked);
+                    // Pass the picked award ID as category so Employees can match it with JSON
+                    setCategory(picked?.id || picked);
+                    setView('employees');
+
+                    /* COMMENTED OUT CATEGORIES ROUTING:
                     setView('categories');
+                    */
                   }}
                 />
               )}
 
+              {/* COMMENTED OUT CATEGORIES VIEW
               {view === 'categories' && award && (
                 <Categories
                   key="categories"
@@ -188,6 +196,7 @@ export default function App() {
                   }}
                 />
               )}
+              */}
 
               {view === 'employees' && award && category && (
                 <Employees
@@ -195,7 +204,7 @@ export default function App() {
                   award={award}
                   category={category}
                   email={email}
-                  onBack={() => setView('categories')}
+                  onBack={() => setView('awards')}
                   onVoted={finishVote}
                 />
               )}
