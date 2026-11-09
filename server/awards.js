@@ -1,5 +1,4 @@
-// The four awards and the four categories. Edit here to rename things.
-// `title` is exactly what gets written to the "Nominee for" column in the sheet.
+// awards.js
 
 export const AWARDS = [
   {
@@ -24,4 +23,10 @@ export const AWARDS = [
   },
 ];
 
-export const CATEGORIES = ['CBD', 'KMD', 'ACAD', 'OBD'];
+// Updated to use the Award IDs as allowed category strings on the backend
+export const CATEGORIES = [
+  'most-reliable',
+  'team-player',
+  'knowledge-sharer',
+  'most-improved',
+];
