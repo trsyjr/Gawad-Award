@@ -1,4 +1,4 @@
-// awards.js
+// server/awards.js
 
 export const AWARDS = [
   {
@@ -23,7 +23,7 @@ export const AWARDS = [
   },
 ];
 
-// Updated to use the Award IDs as allowed category strings on the backend
+// Updated CATEGORIES array containing award IDs so the backend query validation permits them
 export const CATEGORIES = [
   'most-reliable',
   'team-player',
