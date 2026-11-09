@@ -26,12 +26,8 @@ async function request(path, options = {}) {
 
 export const getConfig = () => request('/config');
 
-// Pass category/award parameter to match backend expected request format
-export const getEmployees = (category) =>
-  request(`/employees?category=${encodeURIComponent(category)}`);
+// Fetch all employees without passing query parameters to prevent server 400 validation errors
+export const getEmployees = () => request('/employees');
 
-export const startSession = (email) =>
-  request('/session', { method: 'POST', body: JSON.stringify({ email }) });
-
-export const castVote = (payload) =>
-  request('/vote', { method: 'POST', body: JSON.stringify(payload) });
+export const startSession = (email) => request('/session', { method: 'POST', body: JSON.stringify({ email }) });
+export const castVote = (payload) => request('/vote', { method: 'POST', body: JSON.stringify(payload) });

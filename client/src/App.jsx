@@ -11,8 +11,6 @@ import { SpinnerIcon } from './icons.jsx';
 import { getConfig, startSession } from './api.js';
 
 const EMAIL_KEY = 'awards.email';
-
-// Change this filename to match your audio file inside client/public/awards/
 const MUSIC_PATH = '/awards/AwardingBM.mp3';
 
 const remember = (email) => {
@@ -43,21 +41,17 @@ export default function App() {
   const [award, setAward] = useState(null);
   const [category, setCategory] = useState(null);
 
-  // --- BACKGROUND MUSIC LOGIC ---
   useEffect(() => {
     const audio = new Audio(MUSIC_PATH);
     audio.loop = true;
-    audio.volume = 0.4; // Set volume level (0.0 to 1.0)
+    audio.volume = 0.4;
 
     const startPlayback = () => {
-      audio.play().catch(() => {
-        // Autoplay policy prevented playback; wait for user interaction
-      });
+      audio.play().catch(() => {});
     };
 
     startPlayback();
 
-    // Fallback: Start playing on first user interaction if browser blocked autoplay
     const handleUserInteraction = () => {
       audio.play().catch(() => {});
       window.removeEventListener('click', handleUserInteraction);
@@ -73,7 +67,6 @@ export default function App() {
       window.removeEventListener('keydown', handleUserInteraction);
     };
   }, []);
-  // ------------------------------
 
   useEffect(() => {
     let cancelled = false;
@@ -175,10 +168,6 @@ export default function App() {
                     setAward(picked);
                     setCategory(awardId);
                     setView('employees');
-
-                    /* COMMENTED OUT CATEGORIES ROUTING:
-                    setView('categories');
-                    */
                   }}
                 />
               )}

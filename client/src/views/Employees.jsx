@@ -9,7 +9,6 @@ import { SearchIcon, SpinnerIcon } from '../icons.jsx';
 import { getEmployees } from '../api.js';
 import { GOLD_SHADOW } from '../theme.js';
 
-// Above this many cards the idle floating loop is switched off to keep scrolling smooth.
 const FLOAT_LIMIT = 24;
 
 export default function Employees({ award, category, email, onBack, onVoted }) {
@@ -19,22 +18,24 @@ export default function Employees({ award, category, email, onBack, onVoted }) {
   const [pending, setPending] = useState(null);
   const [attempt, setAttempt] = useState(0);
 
-  // Safely derive award string ID to avoid passing `undefined`
   const targetAwardId = typeof category === 'string' ? category : (award?.id || category?.id);
 
   useEffect(() => {
-    // Guard against fetching before targetAwardId is available
-    if (!targetAwardId) return;
-
     let cancelled = false;
     setEmployees(null);
     setError('');
 
-    getEmployees(targetAwardId)
+    // Fetch all employees and filter on client side to bypass server category validation
+    getEmployees()
       .then((data) => {
         if (cancelled) return;
         const list = Array.isArray(data) ? data : data?.employees || [];
-        setEmployees(list);
+        
+        // Match against emp.award or emp.category
+        const filtered = list.filter(
+          (emp) => emp.award === targetAwardId || emp.category === targetAwardId
+        );
+        setEmployees(filtered);
       })
       .catch((err) => {
         if (!cancelled) setError(err.message);
