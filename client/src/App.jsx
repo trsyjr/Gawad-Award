@@ -171,9 +171,9 @@ export default function App() {
                   awards={config.awards}
                   votes={votes}
                   onPick={(picked) => {
+                    const awardId = typeof picked === 'string' ? picked : picked?.id;
                     setAward(picked);
-                    // Pass the picked award ID as category so Employees can match it with JSON
-                    setCategory(picked?.id || picked);
+                    setCategory(awardId);
                     setView('employees');
 
                     /* COMMENTED OUT CATEGORIES ROUTING:

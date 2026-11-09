@@ -5,6 +5,16 @@ import BackButton from '../components/BackButton.jsx';
 import AwardEmblem from '../components/AwardEmblem.jsx';
 import { GOLD_SHADOW } from '../theme.js';
 
+/*
+  CATEGORIES VIEW - COMMENTED OUT 
+  This view is currently bypassed in favor of navigating directly from Awards -> Employees.
+*/
+
+export default function Categories(/* { award, categories, onPick, onBack } */) {
+  return null;
+}
+
+/*
 export default function Categories({ award, categories, onPick, onBack }) {
   // Only show CBD (or categories that have nominees)
   const activeCategories = categories.filter(
@@ -56,3 +66,4 @@ export default function Categories({ award, categories, onPick, onBack }) {
     </Page>
   );
 }
+*/

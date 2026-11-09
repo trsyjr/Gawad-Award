@@ -19,25 +19,26 @@ export default function Employees({ award, category, email, onBack, onVoted }) {
   const [pending, setPending] = useState(null);
   const [attempt, setAttempt] = useState(0);
 
-  const targetAwardId = award?.id || category;
+  // Safely derive award string ID to avoid passing `undefined`
+  const targetAwardId = typeof category === 'string' ? category : (award?.id || category?.id);
 
   useEffect(() => {
+    // Guard against fetching before targetAwardId is available
+    if (!targetAwardId) return;
+
     let cancelled = false;
     setEmployees(null);
     setError('');
 
-    // Fetch without query params to avoid backend 400 validation error on category string
-    getEmployees()
+    getEmployees(targetAwardId)
       .then((data) => {
         if (cancelled) return;
-        const list = Array.isArray(data) ? data : data.employees || [];
-        // Filter on the client side by matching emp.award to the selected award ID
-        const filtered = list.filter(
-          (emp) => emp.award === targetAwardId || emp.category === targetAwardId
-        );
-        setEmployees(filtered);
+        const list = Array.isArray(data) ? data : data?.employees || [];
+        setEmployees(list);
       })
-      .catch((err) => !cancelled && setError(err.message));
+      .catch((err) => {
+        if (!cancelled) setError(err.message);
+      });
 
     return () => {
       cancelled = true;
@@ -55,11 +56,9 @@ export default function Employees({ award, category, email, onBack, onVoted }) {
 
   return (
     <Page>
-      {/* Updated BackButton label */}
       <BackButton onClick={onBack}>Awards</BackButton>
 
       <div className="mb-16 flex flex-col items-center text-center">
-        {/* Updated headings to display Award title */}
         <h1 className="gold-text font-display text-4xl font-bold tracking-tight sm:text-5xl">
           {award?.title || 'Nominees'}
         </h1>
