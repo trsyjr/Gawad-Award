@@ -19,17 +19,30 @@ export default function Employees({ award, category, email, onBack, onVoted }) {
   const [pending, setPending] = useState(null);
   const [attempt, setAttempt] = useState(0);
 
+  const targetAwardId = award?.id || category;
+
   useEffect(() => {
     let cancelled = false;
     setEmployees(null);
     setError('');
-    getEmployees(category)
-      .then((data) => !cancelled && setEmployees(data.employees))
+
+    // Fetch without query params to avoid backend 400 validation error on category string
+    getEmployees()
+      .then((data) => {
+        if (cancelled) return;
+        const list = Array.isArray(data) ? data : data.employees || [];
+        // Filter on the client side by matching emp.award to the selected award ID
+        const filtered = list.filter(
+          (emp) => emp.award === targetAwardId || emp.category === targetAwardId
+        );
+        setEmployees(filtered);
+      })
       .catch((err) => !cancelled && setError(err.message));
+
     return () => {
       cancelled = true;
     };
-  }, [category, attempt]);
+  }, [targetAwardId, attempt]);
 
   const visible = useMemo(() => {
     if (!employees) return [];
@@ -42,11 +55,15 @@ export default function Employees({ award, category, email, onBack, onVoted }) {
 
   return (
     <Page>
-      <BackButton onClick={onBack}>Categories</BackButton>
+      {/* Updated BackButton label */}
+      <BackButton onClick={onBack}>Awards</BackButton>
 
       <div className="mb-16 flex flex-col items-center text-center">
-        <h1 className="gold-text font-display text-4xl font-bold tracking-tight sm:text-5xl">{category} nominees</h1>
-        <p className="mt-3 text-lg text-ivory/70">Voting for {award.title}</p>
+        {/* Updated headings to display Award title */}
+        <h1 className="gold-text font-display text-4xl font-bold tracking-tight sm:text-5xl">
+          {award?.title || 'Nominees'}
+        </h1>
+        <p className="mt-3 text-lg text-ivory/70">Select an employee to cast your vote</p>
 
         {employees && employees.length > 8 && (
           <div className="relative mt-6 w-full max-w-sm">
@@ -83,7 +100,7 @@ export default function Employees({ award, category, email, onBack, onVoted }) {
 
       {employees && visible.length === 0 && (
         <p className="py-10 text-center text-lg text-ivory/70">
-          {employees.length === 0 ? `There are no nominees in ${category} yet.` : 'No nominees match your search.'}
+          {employees.length === 0 ? 'There are no nominees for this award yet.' : 'No nominees match your search.'}
         </p>
       )}
 

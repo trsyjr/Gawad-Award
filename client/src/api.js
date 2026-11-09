@@ -25,6 +25,9 @@ async function request(path, options = {}) {
 }
 
 export const getConfig = () => request('/config');
-export const getEmployees = (category) => request(`/employees?category=${encodeURIComponent(category)}`);
+
+// Fetch all employees without passing the category query string to prevent 400 validation error
+export const getEmployees = () => request('/employees');
+
 export const startSession = (email) => request('/session', { method: 'POST', body: JSON.stringify({ email }) });
 export const castVote = (payload) => request('/vote', { method: 'POST', body: JSON.stringify(payload) });
