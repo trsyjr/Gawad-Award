@@ -105,7 +105,7 @@ export default function Employees({ award, category, email, onBack, onVoted }) {
       )}
 
       {visible.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-8 gap-y-12 w-full max-w-7xl mx-auto px-4 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8 w-full max-w-7xl mx-auto px-4 justify-items-center">
           {visible.map((employee, i) => (
             <motion.div
               key={employee.id}
