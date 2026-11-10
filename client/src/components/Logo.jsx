@@ -10,7 +10,7 @@ export default function Logo({ src, alt = '', className = '', fallback = null })
       alt={alt}
       draggable={false}
       onError={() => setFailed(true)}
-      className={`h-full w-full object-contain ${className}`}
+      className={`object-contain ${className}`}
     />
   );
 }
