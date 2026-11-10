@@ -25,13 +25,11 @@ export default function Employees({ award, category, email, onBack, onVoted }) {
     setEmployees(null);
     setError('');
 
-    // Fetch all employees and filter on client side to bypass server category validation
     getEmployees()
       .then((data) => {
         if (cancelled) return;
         const list = Array.isArray(data) ? data : data?.employees || [];
         
-        // Match against emp.award or emp.category
         const filtered = list.filter(
           (emp) => emp.award === targetAwardId || emp.category === targetAwardId
         );
@@ -105,14 +103,14 @@ export default function Employees({ award, category, email, onBack, onVoted }) {
       )}
 
       {visible.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8 w-full max-w-7xl mx-auto px-4 justify-items-center">
+        <div className="flex flex-wrap justify-center gap-y-12 gap-x-6 lg:gap-x-10 w-full max-w-7xl mx-auto px-4">
           {visible.map((employee, i) => (
             <motion.div
               key={employee.id}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: Math.min(i, 12) * 0.06, type: 'spring', stiffness: 90, damping: 16 }}
-              className="w-full flex flex-col items-center"
+              className="w-48 sm:w-52 flex flex-col items-center shrink-0"
             >
               <Floaty
                 amplitude={8}
