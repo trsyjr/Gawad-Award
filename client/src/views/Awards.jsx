@@ -11,17 +11,16 @@ export default function Awards({ awards, votes, onPick }) {
 
   return (
     <Page>
-      {/* Header section */}
-      <div className="pt-6 mb-16 text-center">
+      <div className="pt-4 mb-16 text-center">
         <h1 className="gold-text font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           {allDone ? 'All votes are in' : 'Choose an award'}
         </h1>
-        <p className="mt-4 text-xl text-ivory/70">
+        <p className="mt-3 text-xl text-ivory/70">
           {allDone
             ? 'Thank you for voting. You can close this page.'
             : `You have cast ${done} of ${awards.length} votes.`}
         </p>
-        <div className="mt-6 flex justify-center gap-2" role="img" aria-label={`${done} of ${awards.length} votes cast`}>
+        <div className="mt-5 flex justify-center gap-2.5" role="img" aria-label={`${done} of ${awards.length} votes cast`}>
           {awards.map((award) => (
             <span
               key={award.id}
@@ -33,8 +32,8 @@ export default function Awards({ awards, votes, onPick }) {
         </div>
       </div>
 
-      {/* Full width container: 4 large columns on desktop, centered leftover items on bottom row */}
-      <div className="flex flex-wrap justify-center gap-y-16 gap-x-6 xl:gap-x-8 w-full px-4 sm:px-8 xl:px-12 pb-24">
+      {/* 4 large columns spanning full width; leftover items center on bottom row */}
+      <div className="flex flex-wrap justify-center gap-y-16 gap-x-6 w-full px-2 sm:px-4 pb-20">
         {awards.map((award, i) => {
           const vote = votes[award.id];
 
@@ -44,13 +43,13 @@ export default function Awards({ awards, votes, onPick }) {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.08 * i, type: 'spring', stiffness: 90, damping: 16 }}
-              className="w-full sm:w-[calc(50%-1.5rem)] xl:w-[calc(25%-2rem)] max-w-[420px] shrink-0 flex flex-col"
+              className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] shrink-0 flex flex-col items-center"
             >
               <Floaty amplitude={12} duration={5.2 + i * 0.5} delay={i * 0.6} shadow={GOLD_SHADOW} className="w-full h-full">
                 <motion.article
                   whileHover={{ scale: 1.04 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className="flex h-full flex-col items-center text-center p-6 lg:p-8"
+                  className="flex h-full flex-col items-center text-center p-4 sm:p-6"
                 >
                   <AwardEmblem
                     awardId={award.id}

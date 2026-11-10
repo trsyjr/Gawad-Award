@@ -4,8 +4,6 @@ import Background from './components/Background.jsx';
 import Header from './components/Header.jsx';
 import Landing from './views/Landing.jsx';
 import Awards from './views/Awards.jsx';
-// COMMENTED OUT CATEGORIES IMPORT
-// import Categories from './views/Categories.jsx';
 import Employees from './views/Employees.jsx';
 import { SpinnerIcon } from './icons.jsx';
 import { getConfig, startSession } from './api.js';
@@ -133,7 +131,8 @@ export default function App() {
       <div className="relative z-10 min-h-screen px-4 pb-28 pt-28 sm:px-8">
         {config && <Header title={config.eventTitle} email={email} onSwitchEmail={switchEmail} />}
 
-        <div className="mx-auto w-full max-w-6xl">
+        {/* UNLOCKED FULL SCREEN WIDTH BELOW */}
+        <div className="mx-auto w-full max-w-[1920px]">
           {booting && (
             <div className="flex min-h-[50vh] items-center justify-center" role="status" aria-label="Loading">
               <SpinnerIcon className="h-9 w-9 animate-spin text-gold" />
@@ -171,21 +170,6 @@ export default function App() {
                   }}
                 />
               )}
-
-              {/* COMMENTED OUT CATEGORIES VIEW
-              {view === 'categories' && award && (
-                <Categories
-                  key="categories"
-                  award={award}
-                  categories={config.categories}
-                  onBack={() => setView('awards')}
-                  onPick={(id) => {
-                    setCategory(id);
-                    setView('employees');
-                  }}
-                />
-              )}
-              */}
 
               {view === 'employees' && award && category && (
                 <Employees
