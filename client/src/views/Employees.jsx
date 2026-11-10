@@ -103,14 +103,14 @@ export default function Employees({ award, category, email, onBack, onVoted }) {
       )}
 
       {visible.length > 0 && (
-        <div className="flex flex-wrap justify-center gap-y-12 gap-x-6 lg:gap-x-10 w-full max-w-7xl mx-auto px-4">
+        <div className="flex flex-wrap justify-center gap-y-12 gap-x-6 lg:gap-x-10 w-full max-w-[1440px] mx-auto px-4">
           {visible.map((employee, i) => (
             <motion.div
               key={employee.id}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: Math.min(i, 12) * 0.06, type: 'spring', stiffness: 90, damping: 16 }}
-              className="w-48 sm:w-52 flex flex-col items-center shrink-0"
+              className="w-56 sm:w-64 flex flex-col items-center shrink-0"
             >
               <Floaty
                 amplitude={8}
@@ -125,17 +125,26 @@ export default function Employees({ award, category, email, onBack, onVoted }) {
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                   className="flex h-full w-full flex-col items-center text-center py-2"
                 >
-                  <Avatar name={employee.name} src={employee.photo} className="h-32 w-32 rounded-full object-cover shadow-lg" />
+                  <Avatar 
+                    name={employee.name} 
+                    src={employee.photo} 
+                    className="h-40 w-40 sm:h-44 sm:w-44 rounded-full object-cover shadow-xl" 
+                    textClass="text-4xl"
+                  />
 
-                  <h2 className="mt-4 font-display text-base font-bold leading-tight text-gold-light max-w-[180px]">{employee.name}</h2>
-                  <p className="mt-1 text-xs leading-snug text-ivory/70 max-w-[180px]">{employee.position}</p>
+                  <h2 className="mt-5 font-display text-lg sm:text-xl font-bold leading-tight text-gold-light max-w-[220px]">
+                    {employee.name}
+                  </h2>
+                  <p className="mt-1.5 text-xs sm:text-sm leading-snug text-ivory/70 max-w-[220px]">
+                    {employee.position}
+                  </p>
 
-                  <div className="mt-auto w-full pt-5 flex justify-center">
+                  <div className="mt-auto w-full pt-6 flex justify-center">
                     <button
                       type="button"
                       onClick={() => setPending(employee)}
                       aria-label={`Vote for ${employee.name}`}
-                      className="btn-gold h-9 w-28 rounded-full text-xs font-semibold tracking-wide"
+                      className="btn-gold h-11 w-36 rounded-full text-sm font-semibold tracking-wide"
                     >
                       Vote
                     </button>

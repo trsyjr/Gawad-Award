@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 /** Employee photo in a gold ring. Falls back to gold initials when there is no photo or it fails to load. */
-export default function Avatar({ name, src, className = 'h-28 w-28', textClass = 'text-3xl' }) {
+export default function Avatar({ name, src, className = 'h-36 w-36', textClass = 'text-4xl' }) {
   const [failed, setFailed] = useState(!src);
   const initials = name
     .split(/\s+/)
@@ -12,7 +12,7 @@ export default function Avatar({ name, src, className = 'h-28 w-28', textClass =
 
   return (
     <span
-      className={`relative inline-flex items-center justify-center shrink-0 overflow-hidden rounded-full ring-2 ring-gold shadow-[0_0_28px_-4px_rgba(212,175,55,0.55)] ${className}`}
+      className={`relative inline-flex items-center justify-center shrink-0 overflow-hidden rounded-full ring-2 ring-gold shadow-[0_0_32px_-4px_rgba(212,175,55,0.55)] ${className}`}
     >
       {failed ? (
         <span className={`gold-surface flex h-full w-full items-center justify-center font-display font-bold ${textClass}`}>
