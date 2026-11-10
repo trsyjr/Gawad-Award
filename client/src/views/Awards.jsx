@@ -32,7 +32,7 @@ export default function Awards({ awards, votes, onPick }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 xl:gap-16 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 xl:gap-12 items-stretch max-w-7xl mx-auto px-4">
         {awards.map((award, i) => {
           const vote = votes[award.id];
 
@@ -56,26 +56,28 @@ export default function Awards({ awards, votes, onPick }) {
                     iconClass="h-20 w-20 sm:h-24 sm:w-24"
                   />
 
-                  <h2 className="mt-8 font-display text-3xl font-bold leading-tight text-gold-light">{award.title}</h2>
-                  <p className="mt-3 text-xl leading-relaxed text-ivory/70">{award.description}</p>
+                  <h2 className="mt-8 font-display text-2xl sm:text-3xl font-bold leading-tight text-gold-light">{award.title}</h2>
+                  <p className="mt-3 text-base sm:text-lg leading-relaxed text-ivory/70">{award.description}</p>
 
                   <div className="mt-auto pt-10 w-full flex justify-center">
                     {vote ? (
                       <div
-                        className="flex items-center justify-center gap-3.5 rounded-full border border-gold/40 bg-gold/10 py-3 px-6"
+                        className="flex w-full items-center justify-center gap-2.5 rounded-full border border-gold/40 bg-gold/10 py-3 px-3 sm:px-4 overflow-hidden"
                         role="status"
                       >
-                        <span className="gold-surface grid h-10 w-10 shrink-0 place-items-center rounded-full">
-                          <CheckIcon className="h-6 w-6" strokeWidth={3} />
+                        <span className="gold-surface grid h-8 w-8 shrink-0 place-items-center rounded-full">
+                          <CheckIcon className="h-5 w-5" strokeWidth={3} />
                         </span>
-                        <span className="min-w-0 truncate text-lg font-medium text-gold-light">You voted for {vote.name}</span>
+                        <span className="truncate text-sm sm:text-base font-medium text-gold-light">
+                          You voted for {vote.name}
+                        </span>
                       </div>
                     ) : (
                       <button
                         type="button"
                         onClick={() => onPick(award)}
                         aria-label={`Vote for ${award.title}`}
-                        className="btn-gold h-14 w-full rounded-full px-10 text-lg font-semibold"
+                        className="btn-gold h-14 w-full rounded-full px-8 text-lg font-semibold"
                       >
                         Vote
                       </button>
