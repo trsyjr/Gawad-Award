@@ -32,7 +32,7 @@ export default function Awards({ awards, votes, onPick }) {
         </div>
       </div>
 
-      <div className="flex flex-wrap md:flex-nowrap justify-center items-stretch gap-20 lg:gap-24 xl:gap-28">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 xl:gap-16 items-stretch">
         {awards.map((award, i) => {
           const vote = votes[award.id];
 
@@ -42,7 +42,7 @@ export default function Awards({ awards, votes, onPick }) {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.12 * i, type: 'spring', stiffness: 90, damping: 16 }}
-              className="w-full flex-1 min-w-[280px]"
+              className="w-full h-full"
             >
               <Floaty amplitude={12} duration={5.2 + i * 0.5} delay={i * 0.6} shadow={GOLD_SHADOW}>
                 <motion.article

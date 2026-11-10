@@ -11,34 +11,202 @@
     "award": "best-technical",
     "name": "Gelves C. Almiñe",
     "position": "Project Development Officer III",
-    "photo": "/cbd/THEA.JPG"
+    "photo": "/taaorss/Gelves.JPG"
   },
   {
     "id": "cbd-03",
     "award": "best-technical",
     "name": "Analiza S. Ileto",
     "position": "Project Development Officer III",
-    "photo": "/cbd/THEA.JPG"
+    "photo": "/cbd/Ana.JPG"
   },
   {
     "id": "cbd-04",
     "award": "best-technical",
     "name": "Rutsen R. Natulla",
     "position": "Admin Officer IV",
-    "photo": "/cbd/THEA.JPG"
+    "photo": "/obd/Rutsen.JPG"
   },
   {
     "id": "cbd-05",
     "award": "best-administrative",
     "name": "Virginia W. Setias",
     "position": "Admin Officer V",
-    "photo": "/cbd/THEA.JPG"
+    "photo": "/kmd/Che.png"
   },
   {
-    "id": "cbd-05",
+    "id": "cbd-06",
     "award": "best-administrative",
     "name": "Loisse Nadine Q. Madrid",
     "position": "Aministrative Assistant III",
+    "photo": "/obd/Nadine.JPG"
+  },
+  {
+    "id": "cbd-07",
+    "award": "excellence-service",
+    "name": "Jesica S. Mencias",
+    "position": "Training Specialist IV",
+    "photo": "/cbd/Jesica.JPG"
+  },
+  {
+    "id": "cbd-08",
+    "award": "excellence-service",
+    "name": "Elladonna M. Agor",
+    "position": "Social Work Officer III",
+    "photo": "/kmd/Ella.JPG"
+  },
+  {
+    "id": "cbd-09",
+    "award": "excellence-service",
+    "name": "Kirsten Patrice E. Maglalang",
+    "position": "Training Specialist III",
+    "photo": "/acad/Kirsten.JPG"
+  },
+  {
+    "id": "cbd-10",
+    "award": "excellence-service",
+    "name": "Rogelio Tomas L. Gutierrez ",
+    "position": "Project Development V",
+    "photo": "/obd/Roger.JPG"
+  },
+  {
+    "id": "cbd-11",
+    "award": "most-reliable",
+    "name": "Jose Tiofisto M. Pacao",
+    "position": "Aministrative Assistant II",
+    "photo": "/cbd/JOPS.JPG"
+  },
+  {
+    "id": "cbd-12",
+    "award": "most-reliable",
+    "name": "Kathleen Jhoy L. Lesaca",
+    "position": "Project Development III",
+    "photo": "/taaorss/Kath.JPG"
+  },
+  {
+    "id": "cbd-13",
+    "award": "most-reliable",
+    "name": "Anthony Z. Contreras",
+    "position": "Manpower Development Officer II",
+    "photo": "/kmd/Tony.JPG"
+  },
+  {
+    "id": "cbd-14",
+    "award": "most-reliable",
+    "name": "Justice John T. Banzuela",
+    "position": "Project Development II",
+    "photo": "/acad/Justice.png"
+  },
+  {
+    "id": "cbd-15",
+    "award": "most-reliable",
+    "name": "Ruby Anna R. Tolentino",
+    "position": "Admin Officer V",
+    "photo": "/obd/RubyAnna.jpg"
+  },
+  {
+    "id": "cbd-16",
+    "award": "outstanding-trainer",
+    "name": "Aljohn C. Purca",
+    "position": "Social Work Officer III",
+    "photo": "/cbd/ALJOHN.JPG"
+  },
+  {
+    "id": "cbd-17",
+    "award": "outstanding-trainer",
+    "name": "Clifford Robin C. Gabatin",
+    "position": "Project Development Officer IV",
+    "photo": "/acad/Clifford.JPG"
+  },
+  {
+    "id": "cbd-18",
+    "award": "team-player",
+    "name": "Althea Muriel L. Pineda",
+    "position": "Training Specialist III",
     "photo": "/cbd/THEA.JPG"
+  },
+  {
+    "id": "cbd-19",
+    "award": "team-player",
+    "name": "Glenda Fulong",
+    "position": "Social Work Officer III",
+    "photo": "/taaorss/Glenda.JPG"
+  },
+  {
+    "id": "cbd-20",
+    "award": "team-player",
+    "name": "Efricor B. Sakilayan",
+    "position": "Information Technology Officer II",
+    "photo": "/kmd/Pim.jpeg"
+  },
+  {
+    "id": "cbd-21",
+    "award": "team-player",
+    "name": "Rhency P. Chua",
+    "position": "Admin Assistant V",
+    "photo": "/obd/Rhency.JPG"
+  },
+  {
+    "id": "cbd-22",
+    "award": "knowledge-sharer",
+    "name": "Carmina A. Llanto",
+    "position": "Training Specialist IV",
+    "photo": "/cbd/Carmina.JPG"
+  },
+  {
+    "id": "cbd-23",
+    "award": "knowledge-sharer",
+    "name": "Christian B. Baylosis",
+    "position": "Statistician III",
+    "photo": "/taaors/Sky.JPG"
+  },
+  {
+    "id": "cbd-24",
+    "award": "knowledge-sharer",
+    "name": "Jonathan P. Futalan",
+    "position": "Librarian II",
+    "photo": "/kmd/Nate.JPG"
+  },
+  {
+    "id": "cbd-25",
+    "award": "knowledge-sharer",
+    "name": "Richelle Fem A. Juan",
+    "position": "Project Development Officer III",
+    "photo": "/acad/Fem.JPG"
+  },
+  {
+    "id": "cbd-26",
+    "award": "knowledge-sharer",
+    "name": "Gercy C. Virtucio",
+    "position": "Planning Officer II",
+    "photo": "/obd/Gercy.JPG"
+  },
+  {
+    "id": "cbd-27",
+    "award": "most-improved",
+    "name": "Tonghie R. Sy Jr.",
+    "position": "Project Development Officer III",
+    "photo": "/cbd/Ako.JPG"
+  },
+  {
+    "id": "cbd-28",
+    "award": "most-improved",
+    "name": "Monica S. Solesta",
+    "position": "Social Work Officer III",
+    "photo": "/kmd/Monica.JPG"
+  },
+  {
+    "id": "cbd-29",
+    "award": "most-improved",
+    "name": "Mary Abegail J. Fandagani",
+    "position": "Admin Assistant III",
+    "photo": "/obd/Abby.JPG"
+  },
+  {
+    "id": "cbd-30",
+    "award": "knowledge-sharer",
+    "name": "Rosario G. Mayrina",
+    "position": "Admin Officer IV",
+    "photo": "/obd/Flor.JPG"
   }
 ]
