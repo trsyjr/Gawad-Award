@@ -11,9 +11,10 @@ export default function Awards({ awards, votes, onPick }) {
 
   return (
     <Page>
-      <div className="mb-16 text-center">
+      {/* Header section with top padding to clear navigation bar */}
+      <div className="pt-8 mb-16 text-center">
         <h1 className="gold-text font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          {allDone ? 'All four votes are in' : 'Choose an award'}
+          {allDone ? 'All votes are in' : 'Choose an award'}
         </h1>
         <p className="mt-3 text-lg text-ivory/70">
           {allDone
@@ -32,8 +33,12 @@ export default function Awards({ awards, votes, onPick }) {
         </div>
       </div>
 
-      {/* Strict 4-column grid spanning across ultra-wide screen space */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-10 items-stretch w-full">
+      {/* 
+        Flexbox layout that centers all rows automatically:
+        - Row 1: Fits up to 4 large cards side-by-side
+        - Row 2: Any leftover cards (like 5th Loyalty Award) stay perfectly centered horizontally
+      */}
+      <div className="flex flex-wrap justify-center gap-x-8 gap-y-16 w-full max-w-[1700px] mx-auto px-4 pb-20">
         {awards.map((award, i) => {
           const vote = votes[award.id];
 
@@ -43,7 +48,7 @@ export default function Awards({ awards, votes, onPick }) {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.12 * i, type: 'spring', stiffness: 90, damping: 16 }}
-              className="w-full h-full flex flex-col"
+              className="w-full sm:w-[300px] lg:w-[330px] xl:w-[360px] shrink-0 flex flex-col"
             >
               <Floaty amplitude={12} duration={5.2 + i * 0.5} delay={i * 0.6} shadow={GOLD_SHADOW} className="w-full h-full">
                 <motion.article
@@ -53,7 +58,7 @@ export default function Awards({ awards, votes, onPick }) {
                 >
                   <AwardEmblem
                     awardId={award.id}
-                    className="h-52 w-52 sm:h-64 sm:w-64"
+                    className="h-52 w-52 sm:h-60 sm:w-60 shrink-0"
                     iconClass="h-24 w-24 sm:h-28 sm:w-28"
                   />
 
@@ -67,13 +72,13 @@ export default function Awards({ awards, votes, onPick }) {
                   <div className="mt-auto pt-10 w-full flex justify-center">
                     {vote ? (
                       <div
-                        className="flex w-full items-center justify-center gap-2.5 rounded-full border border-gold/40 bg-gold/10 py-3 px-3 overflow-hidden"
+                        className="flex w-full items-center justify-center gap-2.5 rounded-full border border-gold/40 bg-gold/10 py-3 px-4 overflow-hidden"
                         role="status"
                       >
                         <span className="gold-surface grid h-8 w-8 shrink-0 place-items-center rounded-full">
                           <CheckIcon className="h-5 w-5" strokeWidth={3} />
                         </span>
-                        <span className="truncate text-xs sm:text-sm font-medium text-gold-light">
+                        <span className="truncate text-sm sm:text-base font-medium text-gold-light">
                           You voted for {vote.name}
                         </span>
                       </div>
