@@ -32,8 +32,8 @@ export default function Awards({ awards, votes, onPick }) {
         </div>
       </div>
 
-      {/* Expanded full-width flex container centered horizontally */}
-      <div className="flex flex-wrap justify-center gap-y-16 gap-x-8 xl:gap-x-12 w-full max-w-[1700px] mx-auto px-4">
+      {/* Strict 4-column grid spanning across ultra-wide screen space */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-10 items-stretch w-full">
         {awards.map((award, i) => {
           const vote = votes[award.id];
 
@@ -43,7 +43,7 @@ export default function Awards({ awards, votes, onPick }) {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.12 * i, type: 'spring', stiffness: 90, damping: 16 }}
-              className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.75rem)] max-w-[360px] shrink-0 flex flex-col"
+              className="w-full h-full flex flex-col"
             >
               <Floaty amplitude={12} duration={5.2 + i * 0.5} delay={i * 0.6} shadow={GOLD_SHADOW} className="w-full h-full">
                 <motion.article
@@ -53,7 +53,7 @@ export default function Awards({ awards, votes, onPick }) {
                 >
                   <AwardEmblem
                     awardId={award.id}
-                    className="h-52 w-52 sm:h-60 sm:w-60"
+                    className="h-52 w-52 sm:h-64 sm:w-64"
                     iconClass="h-24 w-24 sm:h-28 sm:w-28"
                   />
 
@@ -67,13 +67,13 @@ export default function Awards({ awards, votes, onPick }) {
                   <div className="mt-auto pt-10 w-full flex justify-center">
                     {vote ? (
                       <div
-                        className="flex w-full items-center justify-center gap-2.5 rounded-full border border-gold/40 bg-gold/10 py-3 px-4 overflow-hidden"
+                        className="flex w-full items-center justify-center gap-2.5 rounded-full border border-gold/40 bg-gold/10 py-3 px-3 overflow-hidden"
                         role="status"
                       >
                         <span className="gold-surface grid h-8 w-8 shrink-0 place-items-center rounded-full">
                           <CheckIcon className="h-5 w-5" strokeWidth={3} />
                         </span>
-                        <span className="truncate text-sm sm:text-base font-medium text-gold-light">
+                        <span className="truncate text-xs sm:text-sm font-medium text-gold-light">
                           You voted for {vote.name}
                         </span>
                       </div>
