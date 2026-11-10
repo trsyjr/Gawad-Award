@@ -128,10 +128,9 @@ export default function App() {
   return (
     <>
       <Background />
-      <div className="relative z-10 min-h-screen px-4 pb-28 pt-28 sm:px-8">
+      <div className="relative z-10 min-h-screen px-4 pb-20 pt-28 sm:px-8 sm:pt-32">
         {config && <Header title={config.eventTitle} email={email} onSwitchEmail={switchEmail} />}
 
-        {/* UNLOCKED FULL SCREEN WIDTH BELOW */}
         <div className="mx-auto w-full max-w-[1920px]">
           {booting && (
             <div className="flex min-h-[50vh] items-center justify-center" role="status" aria-label="Loading">

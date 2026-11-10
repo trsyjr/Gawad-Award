@@ -11,11 +11,12 @@ export default function Awards({ awards, votes, onPick }) {
 
   return (
     <Page>
-      <div className="pt-4 mb-16 text-center">
+      {/* Header text */}
+      <div className="mb-14 text-center">
         <h1 className="gold-text font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           {allDone ? 'All votes are in' : 'Choose an award'}
         </h1>
-        <p className="mt-3 text-xl text-ivory/70">
+        <p className="mt-3 text-lg sm:text-xl text-ivory/70">
           {allDone
             ? 'Thank you for voting. You can close this page.'
             : `You have cast ${done} of ${awards.length} votes.`}
@@ -32,8 +33,8 @@ export default function Awards({ awards, votes, onPick }) {
         </div>
       </div>
 
-      {/* 4 large columns spanning full width; leftover items center on bottom row */}
-      <div className="flex flex-wrap justify-center gap-y-16 gap-x-6 w-full px-2 sm:px-4 pb-20">
+      {/* 4 Columns filling full screen width */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-12 w-full pb-20 items-stretch">
         {awards.map((award, i) => {
           const vote = votes[award.id];
 
@@ -43,13 +44,13 @@ export default function Awards({ awards, votes, onPick }) {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.08 * i, type: 'spring', stiffness: 90, damping: 16 }}
-              className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] shrink-0 flex flex-col items-center"
+              className="w-full h-full flex flex-col"
             >
               <Floaty amplitude={12} duration={5.2 + i * 0.5} delay={i * 0.6} shadow={GOLD_SHADOW} className="w-full h-full">
                 <motion.article
                   whileHover={{ scale: 1.04 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className="flex h-full flex-col items-center text-center p-4 sm:p-6"
+                  className="flex h-full flex-col items-center text-center p-6 lg:p-8"
                 >
                   <AwardEmblem
                     awardId={award.id}
