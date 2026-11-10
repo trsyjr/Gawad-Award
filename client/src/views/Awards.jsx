@@ -33,8 +33,8 @@ export default function Awards({ awards, votes, onPick }) {
         </div>
       </div>
 
-      {/* 4 Columns filling full screen width */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-12 w-full pb-20 items-stretch">
+      {/* Flex container: 4 items per row on desktop, centered leftover items on the bottom row */}
+      <div className="flex flex-wrap justify-center gap-y-16 gap-x-6 xl:gap-x-10 w-full pb-20">
         {awards.map((award, i) => {
           const vote = votes[award.id];
 
@@ -44,7 +44,7 @@ export default function Awards({ awards, votes, onPick }) {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.08 * i, type: 'spring', stiffness: 90, damping: 16 }}
-              className="w-full h-full flex flex-col"
+              className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.75rem)] shrink-0 flex flex-col items-center"
             >
               <Floaty amplitude={12} duration={5.2 + i * 0.5} delay={i * 0.6} shadow={GOLD_SHADOW} className="w-full h-full">
                 <motion.article
